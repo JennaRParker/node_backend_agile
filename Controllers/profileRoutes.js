@@ -27,6 +27,7 @@ profileRouter.get("/", async (req, res) => {
     }
 })
 
+
 // Delete
 profileRouter.delete("/:id", async (req, res) => {
     try {
