@@ -8,7 +8,8 @@ const cors = require("cors");
 const morgan = require("morgan");
 
 ////////import data files
-const Profile = require("../Models/profile")
+const Profile = require("../Models/profile");
+const Project = require("../Models/project");
 
 /////////////////
 // MIDDLEWARE //
@@ -26,6 +27,19 @@ profileRouter.get("/", async (req, res) => {
         res.status(400).json(error);
     }
 })
+
+// profileRouter.get('/:id', async (req, res) => {
+//     try {
+//         const profile = await Profile.findById({'_id': reference})
+//         const project = await Project.find({_id: {$in: profile.profile}})
+//         res.json({
+//             profile: profile,
+//             project: project
+//         })
+//     } catch (error) {
+//         res.status(400).json(error)
+//     }
+// })
 
 
 // Delete

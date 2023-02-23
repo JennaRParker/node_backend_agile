@@ -1,6 +1,11 @@
 const { default: mongoose } = require("mongoose")
 
 const profileSchema = new mongoose.Schema({
+    _id: String,
+    reference_number: Number,
+    projects: [{
+        type: String
+    }],
     photo: String,
     name: String,
     role: String,

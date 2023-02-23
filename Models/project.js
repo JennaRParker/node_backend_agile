@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose")
 
 const projectSchema = new mongoose.Schema({
+    reference: String,
     title: String,
     description: String,
     skills: [{
@@ -20,7 +21,8 @@ const projectSchema = new mongoose.Schema({
     microsoftTeamsLinks: String,
     slackLink: String,
     trelloLink: String,
-    zoomLink: String
+    zoomLink: String,
+    _id: {type: String, required: true}
 })
 
 const Project = mongoose.model("Project", projectSchema )
