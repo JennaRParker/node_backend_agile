@@ -1,14 +1,18 @@
 const { default: mongoose } = require("mongoose")
+const Schema = mongoose.Schema
 
 const profileSchema = new mongoose.Schema({
-    _id: String,
-    reference_number: Number,
-    projects: [{
-        type: String
+    projectsJoined: [{
+        type: Schema.Types.ObjectId, ref: "Project"
+    }],
+    projectsCreated: [{
+        type: Schema.Types.ObjectId, ref: "Project"
     }],
     photo: String,
     name: String,
-    role: String,
+    roles: [{
+        type: String
+    }],
     bio: String,
     city: String,
     twitter: String,
@@ -19,7 +23,10 @@ const profileSchema = new mongoose.Schema({
         type: String
     }],
     uid: String,
-    skills: [{
+    tech: [{
+        type: String
+    }],
+    experience: [{
         type: String
     }]
 })

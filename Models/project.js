@@ -1,10 +1,14 @@
 const { default: mongoose } = require("mongoose")
+const Schema = mongoose.Schema
 
 const projectSchema = new mongoose.Schema({
-    reference: String,
+    members: [{
+        type: Schema.Types.ObjectId, ref: "Profile"
+    }],
+    creator: {type: Schema.Types.ObjectId, ref: "Profile", required: true},
     title: String,
     description: String,
-    skills: [{
+    tech: [{
         type: String
     }],
     roles: [{
@@ -22,7 +26,6 @@ const projectSchema = new mongoose.Schema({
     slackLink: String,
     trelloLink: String,
     zoomLink: String,
-    _id: {type: String, required: true}
 })
 
 const Project = mongoose.model("Project", projectSchema )

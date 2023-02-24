@@ -27,15 +27,15 @@ projectRouter.get("/", async (req, res) => {
     }
 })
 
-// Show
-// projectRouter.get('/:id', async (req, res) => {
-//     try {
-//         res.json(await Project.findById(req.params.id, req.body))
-//         console.log(req.params)
-//     } catch (error) {
-//         res.status(400).json(error)
-//     }
-// })
+//Show
+projectRouter.get('/:id', async (req, res) => {
+    try {
+        res.json(await Project.findById(req.params.id))
+        console.log(req.params)
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
 
 
 // Delete
