@@ -8,7 +8,7 @@ const projectSchema = new mongoose.Schema({
     creator: {type: Schema.Types.ObjectId, ref: "Profile", required: true},
     title: String,
     description: String,
-    skills: [{
+    tech: [{
         type: String
     }],
     roles: [{
