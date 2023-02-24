@@ -1,9 +1,12 @@
 const { default: mongoose } = require("mongoose")
+const Schema = mongoose.Schema
 
 const profileSchema = new mongoose.Schema({
-    reference_number: Number,
-    projects: [{
-        type: String
+    projectsJoined: [{
+        type: Schema.Types.ObjectId, ref: "Project"
+    }],
+    projectsCreated: [{
+        type: Schema.Types.ObjectId, ref: "Project"
     }],
     photo: String,
     name: String,
