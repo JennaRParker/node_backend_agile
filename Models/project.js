@@ -22,7 +22,6 @@ const projectSchema = new mongoose.Schema({
     slackLink: String,
     trelloLink: String,
     zoomLink: String,
-    _id: {type: String, required: true}
 })
 
 const Project = mongoose.model("Project", projectSchema )
