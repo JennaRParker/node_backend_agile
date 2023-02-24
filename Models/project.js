@@ -6,7 +6,7 @@ const projectSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId, ref: "Profile"
     }],
     creator: {type: Schema.Types.ObjectId, ref: "Profile", required: true},
-    title: String,
+    title: {type: String, required: true},
     description: String,
     tech: [{
         type: String
