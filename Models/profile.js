@@ -25,6 +25,9 @@ const profileSchema = new mongoose.Schema({
     uid: String,
     skills: [{
         type: String
+    }],
+    experience: [{
+        type: String
     }]
 })
 
