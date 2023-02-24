@@ -28,6 +28,17 @@ profileRouter.get("/", async (req, res) => {
     }
 })
 
+// checks for existing uid
+profileRouter.get("/check/:id", async (req, res) => {
+    let uid = req.params.id;
+    let existingProfile = await Profile.exists({ uid :uid })
+    if (existingProfile) {
+        res.send(true)
+    } else {
+        res.send(false)
+    }
+  });
+
 // profileRouter.get('/:id', async (req, res) => {
 //     try {
 //         const profile = await Profile.findById({'_id': reference})
@@ -40,6 +51,8 @@ profileRouter.get("/", async (req, res) => {
 //         res.status(400).json(error)
 //     }
 // })
+
+// profileRouter.get('/:id', async )
 
 
 // Delete
@@ -74,3 +87,6 @@ profileRouter.post("/", async (req, res) => {
 });
 
 module.exports = profileRouter
+
+
+

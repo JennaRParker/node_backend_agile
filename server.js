@@ -14,6 +14,8 @@ const mongoose = require("mongoose");
 const profileController = require("./Controllers/profileRoutes")
 const projectController = require("./Controllers/projectRoutes")
 
+
+
 /////////////////
 // MIDDLEWARE //
 ///////////////
@@ -28,7 +30,7 @@ app.use("/projects", projectController)
 //  MONGOOSE CONNECTION /
 ////////////////////////
 
-mongoose.connect("mongodb+srv://admin:abc1234@cluster0.detkf0t.mongodb.net/dtox?retryWrites=true&w=majority", {
+mongoose.connect(MONGODB_URL, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
 });
