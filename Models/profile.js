@@ -10,7 +10,9 @@ const profileSchema = new mongoose.Schema({
     }],
     photo: String,
     name: String,
-    role: String,
+    roles: [{
+        type: String
+    }],
     bio: String,
     city: String,
     twitter: String,
