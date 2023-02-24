@@ -17,6 +17,32 @@ const projectSchema = new mongoose.Schema({
     categories: [{
         type: String
     }],
+    timeline: {
+      stage1: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage2: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage3: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage4: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage5: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage6: {
+        name: {type: String},
+        description: {type: String}
+      },
+    },
     figmaLink: String,
     gitHubFrontendLink: String,
     gitHubLink: String,
