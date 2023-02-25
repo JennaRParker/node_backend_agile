@@ -3,10 +3,10 @@ const Schema = mongoose.Schema
 
 const projectSchema = new mongoose.Schema({
     members: [{
-        type: Schema.Types.ObjectId, ref: "Profile"
+        type: Schema.Types.ObjectId, ref: "Profile", required: true
     }],
     creator: {type: Schema.Types.ObjectId, ref: "Profile", required: true},
-    title: String,
+    title: {type: String, required: true},
     description: String,
     tech: [{
         type: String
@@ -17,12 +17,38 @@ const projectSchema = new mongoose.Schema({
     categories: [{
         type: String
     }],
+    timeline: {
+      stage1: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage2: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage3: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage4: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage5: {
+        name: {type: String},
+        description: {type: String}
+      },
+      stage6: {
+        name: {type: String},
+        description: {type: String}
+      },
+    },
     figmaLink: String,
     gitHubFrontendLink: String,
-    gitHubLink: String,
+    gitHubBackendLink: String,
     googleDriveLinks: String,
     jiraLink: String,
-    microsoftTeamsLinks: String,
+    microsoftTeamsLink: String,
     slackLink: String,
     trelloLink: String,
     zoomLink: String,

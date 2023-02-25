@@ -41,9 +41,8 @@ profileRouter.get("/check/:id", async (req, res) => {
 
 //Show Route
 profileRouter.get('/:id', async (req, res) => {
-    let uid = req.params.id;
     try {
-        res.json(await Profile.findOne({uid : uid}));
+        res.json(await Profile.findById(req.params.id));
     } catch (error) {
         res.status(400).json(error);
     }
