@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const projectSchema = new mongoose.Schema({
     members: [{
-        type: Schema.Types.ObjectId, ref: "Profile"
+        type: Schema.Types.ObjectId, ref: "Profile", required: true
     }],
     creator: {type: Schema.Types.ObjectId, ref: "Profile", required: true},
     title: {type: String, required: true},
