@@ -28,7 +28,8 @@ const profileSchema = new mongoose.Schema({
     }],
     experience: [{
         type: String
-    }]
+    }],
+    newUser: Boolean
 })
 
 const Profile = mongoose.model("Profile", profileSchema )
