@@ -8,6 +8,7 @@ const projectSchema = new mongoose.Schema({
     creator: {type: Schema.Types.ObjectId, ref: "Profile", required: true},
     title: {type: String, required: true},
     description: String,
+    image: String,
     tech: [{
         type: String
     }],
