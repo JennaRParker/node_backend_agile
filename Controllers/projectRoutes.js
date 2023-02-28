@@ -51,9 +51,7 @@ projectRouter.delete("/:id", async (req, res) => {
 // Update
 projectRouter.put("/:id", async (req, res) => {
     try {
-        req.json(
-            await Project.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        );
+        res.json(await Project.findByIdAndUpdate(req.params.id, req.body, { new: true }));
     } catch (error) {
         //send error
         res.status(400).json(error);
