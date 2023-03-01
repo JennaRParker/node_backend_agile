@@ -44,6 +44,11 @@ const projectSchema = new mongoose.Schema({
         description: {type: String}
       },
     },
+    joinRequests: [{
+      name: String,
+      avatar: String,
+      id: {type: Schema.Types.ObjectId, ref: "Profile", required: true}
+    }],
     figmaLink: String,
     gitHubFrontendLink: String,
     gitHubBackendLink: String,
