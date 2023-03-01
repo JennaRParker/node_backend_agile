@@ -45,7 +45,7 @@ const projectSchema = new mongoose.Schema({
       },
     },
     joinRequests: [{
-      name: String,
+      displayName: String,
       photo: String,
       id: {type: Schema.Types.ObjectId, ref: "Profile", required: true}
     }],
