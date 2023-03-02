@@ -30,7 +30,7 @@ projectRouter.get("/", async (req, res) => {
 //Show
 projectRouter.get('/:id', async (req, res) => {
     try {
-        res.json(await Project.findById(req.params.id))
+        res.json(await Project.findById(req.params.id).populate('members'));
         console.log(req.params)
     } catch (error) {
         res.status(400).json(error)
