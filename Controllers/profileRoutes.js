@@ -63,7 +63,7 @@ profileRouter.delete("/:id", async (req, res) => {
 // Update
 profileRouter.put("/:id", async (req, res) => {
     try{
-        req.json(
+        res.json(
             await Profile.findByIdAndUpdate(req.params.id, req.body, { new: true })
         );
     } catch (error) {
