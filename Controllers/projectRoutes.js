@@ -31,7 +31,6 @@ projectRouter.get("/", async (req, res) => {
 projectRouter.get('/:id', async (req, res) => {
     try {
         res.json(await Project.findById(req.params.id).populate('members'));
-        console.log(req.params)
     } catch (error) {
         res.status(400).json(error)
     }
@@ -61,7 +60,7 @@ projectRouter.put("/:id", async (req, res) => {
 // Create
 projectRouter.post("/", async (req, res) => {
     try {
-        res.json(await Project.create(req.body).populate('members'));
+        res.json(await Project.create(req.body));
     } catch (error) {
         res.status(400).json(error)
     }
