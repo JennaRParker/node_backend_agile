@@ -21,7 +21,7 @@ projectRouter.use(express.json());
 // Index
 projectRouter.get("/", async (req, res) => {
     try {
-        res.json(await Project.find({}));
+        res.json(await Project.find({}).populate('members'));
     } catch (error) {
         res.status(400).json(error);
     }
@@ -51,7 +51,7 @@ projectRouter.delete("/:id", async (req, res) => {
 // Update
 projectRouter.put("/:id", async (req, res) => {
     try {
-        res.json(await Project.findByIdAndUpdate(req.params.id, req.body, { new: true }));
+        res.json(await Project.findByIdAndUpdate(req.params.id, req.body, { new: true }).populate('members'));
     } catch (error) {
         //send error
         res.status(400).json(error);
@@ -61,7 +61,7 @@ projectRouter.put("/:id", async (req, res) => {
 // Create
 projectRouter.post("/", async (req, res) => {
     try {
-        res.json(await Project.create(req.body));
+        res.json(await Project.create(req.body).populate('members'));
     } catch (error) {
         res.status(400).json(error)
     }
